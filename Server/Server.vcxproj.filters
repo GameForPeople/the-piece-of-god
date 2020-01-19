@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Code\Define">
+      <UniqueIdentifier>{e97c9976-ec0e-4f38-9842-471929ca9716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Framework">
+      <UniqueIdentifier>{5b8ab3e4-69a4-4d04-bf19-b4b8d0fd5141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Scene">
+      <UniqueIdentifier>{6cf7f263-ba16-4445-8976-7f52a897d544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Scene\0_TitleScene">
+      <UniqueIdentifier>{a085499f-a84f-418d-a65d-1e438096a2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Scene\1_LoginScene">
+      <UniqueIdentifier>{8b1d1a1e-e3f9-4868-96c8-4c9d58636502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Scene\2_LobbyScene">
+      <UniqueIdentifier>{6a080212-dcde-44dc-8253-45e49b52946c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Scene\4_GameScene">
+      <UniqueIdentifier>{8b3017e2-3486-4b8a-8f02-fcd447c8edb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Scene\3_RoomScene">
+      <UniqueIdentifier>{b1bfbd82-8a59-42ac-ad29-9e2750cb1d6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\ServerFramework.cpp">
+      <Filter>Code\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\BaseScene.cpp">
+      <Filter>Code\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Define\stdafx.cpp">
+      <Filter>Code\Define</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\1_LoginScene\LoginScene.cpp">
+      <Filter>Code\Scene\1_LoginScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\2_LobbyScene\LobbyScene.cpp">
+      <Filter>Code\Scene\2_LobbyScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\4_GameScene\GameScene.cpp">
+      <Filter>Code\Scene\4_GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\3_RoomScene\RoomScene.cpp">
+      <Filter>Code\Scene\3_RoomScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\0_TitleScene\TitleScene.cpp">
+      <Filter>Code\Scene\0_TitleScene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Define\using_type.hh">
+      <Filter>Code\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\ServerFramework.h">
+      <Filter>Code\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\BaseScene.h">
+      <Filter>Code\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Define\stdafx.h">
+      <Filter>Code\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\1_LoginScene\LoginScene.h">
+      <Filter>Code\Scene\1_LoginScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\2_LobbyScene\LobbyScene.h">
+      <Filter>Code\Scene\2_LobbyScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\4_GameScene\GameScene.h">
+      <Filter>Code\Scene\4_GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\3_RoomScene\RoomScene.h">
+      <Filter>Code\Scene\3_RoomScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\0_TitleScene\TitleScene.h">
+      <Filter>Code\Scene\0_TitleScene</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
