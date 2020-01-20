@@ -153,6 +153,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Manager\NetworkManager.cpp" />
     <ClCompile Include="Scene\0_TitleScene\TitleScene.cpp" />
     <ClCompile Include="Scene\1_LoginScene\LoginScene.cpp" />
     <ClCompile Include="Scene\2_LobbyScene\LobbyScene.cpp" />
@@ -161,9 +162,11 @@
     <ClCompile Include="Scene\BaseScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Define\header_for_IOCP.h" />
     <ClInclude Include="Define\stdafx.h" />
     <ClInclude Include="Define\using_type.hh" />
     <ClInclude Include="Framework\ServerFramework.h" />
+    <ClInclude Include="Manager\NetworkManager.h" />
     <ClInclude Include="Scene\0_TitleScene\TitleScene.h" />
     <ClInclude Include="Scene\1_LoginScene\LoginScene.h" />
     <ClInclude Include="Scene\2_LobbyScene\LobbyScene.h" />

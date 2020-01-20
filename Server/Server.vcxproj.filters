@@ -33,6 +33,9 @@
     <Filter Include="Code\Scene\3_RoomScene">
       <UniqueIdentifier>{b1bfbd82-8a59-42ac-ad29-9e2750cb1d6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Manager">
+      <UniqueIdentifier>{126f277b-8ebb-42b9-84b7-7e1bbb781bd5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +65,9 @@
     <ClCompile Include="Scene\0_TitleScene\TitleScene.cpp">
       <Filter>Code\Scene\0_TitleScene</Filter>
     </ClCompile>
+    <ClCompile Include="Manager\NetworkManager.cpp">
+      <Filter>Code\Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define\using_type.hh">
@@ -90,6 +96,12 @@
     </ClInclude>
     <ClInclude Include="Scene\0_TitleScene\TitleScene.h">
       <Filter>Code\Scene\0_TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Define\header_for_IOCP.h">
+      <Filter>Code\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\NetworkManager.h">
+      <Filter>Code\Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
