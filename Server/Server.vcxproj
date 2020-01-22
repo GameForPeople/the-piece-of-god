@@ -154,6 +154,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Manager\NetworkManager.cpp" />
+    <ClCompile Include="Manager\TimerManager.cpp" />
+    <ClCompile Include="Memory\BaseMemoryUnit.cpp" />
     <ClCompile Include="Scene\0_TitleScene\TitleScene.cpp" />
     <ClCompile Include="Scene\1_LoginScene\LoginScene.cpp" />
     <ClCompile Include="Scene\2_LobbyScene\LobbyScene.cpp" />
@@ -167,6 +169,8 @@
     <ClInclude Include="Define\using_type.hh" />
     <ClInclude Include="Framework\ServerFramework.h" />
     <ClInclude Include="Manager\NetworkManager.h" />
+    <ClInclude Include="Manager\TimerManager.h" />
+    <ClInclude Include="Memory\BaseMemoryUnit.h" />
     <ClInclude Include="Scene\0_TitleScene\TitleScene.h" />
     <ClInclude Include="Scene\1_LoginScene\LoginScene.h" />
     <ClInclude Include="Scene\2_LobbyScene\LobbyScene.h" />

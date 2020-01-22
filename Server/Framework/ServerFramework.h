@@ -3,11 +3,14 @@
 #include "../Define/using_type.hh"
 
 class BaseScene;
+class ClientMemory;
 
 //iocp
 class ServerFramework
 {
-	const unsigned short LISTEN_PORT = 9000;
+	static constexpr unsigned short LISTEN_PORT = 9000;
+	static constexpr unsigned short MAX_CLIENT = 10000;
+	static constexpr unsigned short MAX_SEND_POOL_SIZE = 10000;
 
 public:
 	ServerFramework();
@@ -22,15 +25,26 @@ public:
 private:
 	std::vector<_OWNER_PTR BaseScene*> sceneCont;
 
-#pragma region [IOCP]
+#pragma region [Network - IOCP]
 private:
 	void InitNetwork();
-	void WorkerThreadFuinction();
-
+	void WorkerThreadFunction();
+	void AcceptThreadFunction();
 
 	HANDLE hIOCP;
 	SOCKET listenSocket;
 
 	std::vector<std::thread> workerThreadCont;
+	std::thread acceptThread;
+
+	concurrency::concurrent_queue<SendMemory*> sendMemoryPool;
+#pragma endregion
+
+	void InitManager();
+
+#pragma region [Client Cont]
+private:
+	std::vector<ClientMemory> clientCont;
+	concurrency::concurrent_queue<_Key> clientKeyPool;
 #pragma endregion
 };

@@ -36,6 +36,9 @@
     <Filter Include="Code\Manager">
       <UniqueIdentifier>{126f277b-8ebb-42b9-84b7-7e1bbb781bd5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Memory">
+      <UniqueIdentifier>{0da91527-2eef-4b8c-8506-2b5d71164e22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -66,6 +69,12 @@
       <Filter>Code\Scene\0_TitleScene</Filter>
     </ClCompile>
     <ClCompile Include="Manager\NetworkManager.cpp">
+      <Filter>Code\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\BaseMemoryUnit.cpp">
+      <Filter>Code\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\TimerManager.cpp">
       <Filter>Code\Manager</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,6 +110,12 @@
       <Filter>Code\Define</Filter>
     </ClInclude>
     <ClInclude Include="Manager\NetworkManager.h">
+      <Filter>Code\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\BaseMemoryUnit.h">
+      <Filter>Code\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\TimerManager.h">
       <Filter>Code\Manager</Filter>
     </ClInclude>
   </ItemGroup>

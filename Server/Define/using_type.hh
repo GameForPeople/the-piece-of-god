@@ -15,3 +15,13 @@
 #define _OWNER_PTR
 #define	_DO_NOT_DELETE	/* copyed pointer */	
 #define	_NOT_NULLPTR	
+
+using _Buffer = char;
+
+using _Key = short;
+
+using _Nickname = std::wstring;
+using _Id = std::string;
+using _Pw = std::string;
+using _Count = int;
+using _Money = int;

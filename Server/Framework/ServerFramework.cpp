@@ -2,6 +2,7 @@
 #include "../Define/stdafx.h"
 
 #include "../Scene/BaseScene.h"
+#include "../Memory/BaseMemoryUnit.h"
 
 #include "ServerFramework.h"
 
@@ -24,7 +25,12 @@ ServerFramework::ServerFramework()
 
 	assert(sceneCont.size() == _SceneType::ENUM_SIZE && "미생성된 SceneType이 있습니다.");
 
+	clientCont.reserve(MAX_CLIENT);
+
+	for (int i = 0; i < MAX_CLIENT; ++i) { clientCont.emplace_back(); }
+
 	InitNetwork();
+	InitManager();
 }
 
 ServerFramework::~ServerFramework()
@@ -32,10 +38,65 @@ ServerFramework::~ServerFramework()
 	for (auto& scene : sceneCont) {	delete scene; }
 }
 
+void ServerFramework::WorkerThreadFunction()
+{
+	int retVal{};
+	DWORD cbTransferred{};
+	unsigned long long Key{};
+
+	while (7777777)
+	{
+
+	}
+}
+
+void ServerFramework::AcceptThreadFunction()
+{
+	SOCKET clientSocket{};
+	SOCKADDR_IN clientAddr{};
+	int addrLength = sizeof(clientAddr);
+
+	while (7)
+	{
+		if (clientSocket = WSAAccept(listenSocket, (SOCKADDR*)&clientAddr, &addrLength, NULL, NULL)
+			; clientSocket == INVALID_SOCKET)
+		{
+			ERROR_UTIL::Error(MAKE_SOURCE_LOCATION, TEXT("accept()"));
+			break;
+		}
+
+		if (_Key retKey; clientKeyPool.try_pop(retKey))
+		{
+			// Connect True
+			clientCont[retKey].socket = clientSocket;
+
+			CreateIoCompletionPort(reinterpret_cast<HANDLE>(clientSocket)
+				, hIOCP
+				, retKey
+				, 0);
+
+			//
+			// RECV!
+			//
+		}
+		else
+		{
+			// Connect fail - Max Client
+
+			//
+			// Send! Connect Fail!
+			//
+		}
+	}
+}
+
 void ServerFramework::Run()
 {
 	// 7. Listen()!
 	if (listen(listenSocket, SOMAXCONN) == SOCKET_ERROR) ERROR_UTIL::Error(MAKE_SOURCE_LOCATION, TEXT("listen()"));
+
+	acceptThread = std::thread{ [&]() noexcept { AcceptThreadFunction(); } };
+	std::cout << "\n 서버 뿌셔! \n";
 }
 
 void ServerFramework::InitNetwork()
@@ -53,7 +114,7 @@ void ServerFramework::InitNetwork()
 	workerThreadCont.reserve(threadCount);
 	for (int i = 0; i < /* (int)si.dwNumberOfProcessors * 2 */ threadCount; ++i)
 	{
-		workerThreadCont.emplace_back(std::thread{ [&]() {this->WorkerThreadFuinction(); } });
+		workerThreadCont.emplace_back(std::thread{ [&]() {this->WorkerThreadFunction(); } });
 	}
 
 	// 4. 소켓 생성
@@ -69,16 +130,14 @@ void ServerFramework::InitNetwork()
 
 	// 6. 소켓 설정
 	if (::bind(listenSocket, (SOCKADDR*)&serverAddr, sizeof(serverAddr)) == SOCKET_ERROR) ERROR_UTIL::Error(MAKE_SOURCE_LOCATION, TEXT("bind()"));
+
+	std::cout << "\n 서버 준비 완료!! \n";
 }
 
-void ServerFramework::WorkerThreadFuinction()
+void ServerFramework::InitManager()
 {
-	int retVal{};
-	DWORD cbTransferred{};
-	unsigned long long Key{};
+	for (int i = 0; i < MAX_CLIENT; ++i) { clientKeyPool.push(i); }
 
-	while (7)
-	{
-
-	}
+	for (int i = 0; i < MAX_SEND_POOL_SIZE; ++i) { sendMemoryPool.push(new SendMemory()); }
 }
+
