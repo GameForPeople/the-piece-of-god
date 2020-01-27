@@ -3,7 +3,8 @@
 #include "../Define/using_type.hh"
 
 class BaseScene;
-class ClientMemory;
+struct ClientMemory;
+struct SendMemory;
 
 //iocp
 class ServerFramework
@@ -40,11 +41,12 @@ private:
 	concurrency::concurrent_queue<SendMemory*> sendMemoryPool;
 #pragma endregion
 
-	void InitManager();
-
 #pragma region [Client Cont]
 private:
 	std::vector<ClientMemory> clientCont;
 	concurrency::concurrent_queue<_Key> clientKeyPool;
 #pragma endregion
+
+	void InitManager();
+
 };

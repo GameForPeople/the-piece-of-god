@@ -25,10 +25,11 @@ ServerFramework::ServerFramework()
 
 	assert(sceneCont.size() == _SceneType::ENUM_SIZE && "미생성된 SceneType이 있습니다.");
 
+	//
 	clientCont.reserve(MAX_CLIENT);
-
 	for (int i = 0; i < MAX_CLIENT; ++i) { clientCont.emplace_back(); }
-
+	
+	//
 	InitNetwork();
 	InitManager();
 }
@@ -44,7 +45,7 @@ void ServerFramework::WorkerThreadFunction()
 	DWORD cbTransferred{};
 	unsigned long long Key{};
 
-	while (7777777)
+	while (7)
 	{
 
 	}
@@ -96,7 +97,7 @@ void ServerFramework::Run()
 	if (listen(listenSocket, SOMAXCONN) == SOCKET_ERROR) ERROR_UTIL::Error(MAKE_SOURCE_LOCATION, TEXT("listen()"));
 
 	acceptThread = std::thread{ [&]() noexcept { AcceptThreadFunction(); } };
-	std::cout << "\n 서버 뿌셔! \n";
+	std::cout << "\n Server - Run! \n";
 }
 
 void ServerFramework::InitNetwork()
@@ -131,7 +132,7 @@ void ServerFramework::InitNetwork()
 	// 6. 소켓 설정
 	if (::bind(listenSocket, (SOCKADDR*)&serverAddr, sizeof(serverAddr)) == SOCKET_ERROR) ERROR_UTIL::Error(MAKE_SOURCE_LOCATION, TEXT("bind()"));
 
-	std::cout << "\n 서버 준비 완료!! \n";
+	std::cout << "\n Server - Ready! \n";
 }
 
 void ServerFramework::InitManager()
